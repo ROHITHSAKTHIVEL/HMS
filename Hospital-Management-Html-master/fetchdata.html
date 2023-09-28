@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<title> Unity Hospital | Login </title>
+
+
+		<!-- Web Fonts -->
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+		<!-- CSS Global Compulsory -->
+		<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+
+		<!-- CSS Header and Footer -->
+		<link rel="stylesheet" href="assets/css/header.css">
+		<link rel="stylesheet" href="assets/css/footer.css">
+
+		<!-- CSS Implementing Plugins -->
+		<link rel="stylesheet" href="assets/plugins/line-icons-pro/styles.css">
+		<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+		<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+
+		<!-- CSS Customization -->
+		<link rel="stylesheet" href="assets/css/custom.css">
+
+</head>
+
+<body>
+	<div class="wrapper">
+	<!--=== Header v1 ===-->
+	<div class="header-v1">
+	<!-- Topbar -->
+	<div class="topbar-v1">
+	<div class="container">
+	<div class="row">
+	<div class="col-md-6">
+			<ul class="list-inline top-v1-contacts">
+			<li>
+			<i class="fa fa-envelope"></i> Email: unityhospital@gmail.com
+			</li>
+			<li>
+			<i class="fa fa-phone"></i> Contact no : 88666 00555
+			</li>
+			</ul>
+	</div>
+	</div>
+	</div>
+	</div>
+
+<!-- End Topbar -->
+
+				<!-- Navbar -->
+				<div class="navbar mega-menu" role="navigation">
+				<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="res-container">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-brand">
+				<a href="index.html">
+				<img src="assets/img/logo/unity_white.jpg" alt="Logo">
+				</a>
+				</div>
+				</div><!--/end responsive container-->
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-responsive-collapse">
+				<div class="res-container">
+				<ul class="nav navbar-nav">
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+
+
+				<!-- Home  -->
+				<li class="mega-menu-fullwidth">
+				<a href="index.html" >
+				HOME
+				</a>
+
+				</li>
+				<!-- End Home-->
+
+				<!-- About Us -->
+				<li class="mega-menu-fullwidth">
+				<a href="about.html" >
+				ABOUT US
+				</a>	
+				</li>
+				<!-- End About us -->
+
+				<!-- Doctors -->
+				<li class="mega-menu-fullwidth">
+				<a href="doctors.html" >
+				DOCTORS
+				</a>
+
+				</li>
+				<!-- End Doctors -->
+
+
+				<!-- Gallery -->
+				<li class="mega-menu-fullwidth">
+				<a href="gallery.html" >
+				GALLERY
+				</a>
+
+				</li>
+				<!-- End Gallery -->
+
+
+				<!-- Blog -->
+				<li class="mega-menu-fullwidth">
+				<a href="blog.html" >
+				BLOGS
+				</a>	
+				</li>
+				<!-- End Blog -->
+
+				<!-- Contact Us -->
+				<li class="mega-menu-fullwidth">
+				<a href="contact.html" >
+				CONTACT US
+				</a>	
+				</li>
+				<!-- End Contact us -->
+
+				<!-- Registration -->
+				<li class="mega-menu-fullwidth">
+				<a href="registration.html" >
+				REGISTRATION
+				</a>	
+				</li>
+				<!-- End registration -->
+
+				<!-- login -->
+				<li class="mega-menu-fullwidth">
+				<a href="login.html" >
+				LOGIN
+				</a>	
+				</li>
+				<!-- End login -->
+
+				<!-- Appointment -->
+				<li class="mega-menu-fullwidth">
+				<a href="login.html">
+				BOOK APPOINTMENT
+				</a>
+
+				</li>
+				<li class="mega-menu-fullwidth">
+					<a href="admin.html">
+						ADMIN
+					</a>
+	
+					</li>
+                    <li class="mega-menu-fullwidth">
+                        <a href="graph.html">
+                          PATIENT GRAPH
+                        </a>
+        
+                        </li>
+				<!-- End Appointment -->
+
+				</ul>
+
+				</div>
+				</div>
+				</div>
+				</div>
+				</div>
+				<!-- End Navbar -->
+
+
+	<!-- title -->
+
+	<!-- In your HTML file -->
+<div class="fetch-heading">
+    <h2>FETCH</h2>
+</div>
+
+	<!--  title  -->
+
+    <title >Data Retrieval</title>
+    <style>
+        /* Define your CSS styles here */
+        title {
+            position: flex;
+            padding-left: 50px;
+            align-items: center;
+        }
+    </style>
+    <style>
+           /* Media query for screens with a maximum width of 768px */
+           @media (max-width: 768px) {
+            /* Adjust the styles for smaller screens */
+            
+            /* Example: Make the .data-container full width */
+            .data-container {
+                max-width: 100%; /* Use full width on smaller screens */
+                margin: 20px; /* Reduce margin for smaller screens */
+            }
+            
+            /* Example: Stack the filter input on top of the content */
+            .filter-input {
+                float: none; /* Remove floating for smaller screens */
+                margin-top: 10px; /* Adjust margin for spacing */
+                width: 100%; /* Make it full width */
+            }
+            
+            /* You can similarly adjust other styles as needed for smaller screens */
+           }
+        /* Container for the entire content */
+        .data-container {
+            max-width: 1200px; /* Increased the maximum width for the container */
+            margin: 80px 270px 160px 290px; /* Center the container horizontally */
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px; /* Increased border radius for a rounded appearance */
+            background-color: #ece7e700; /* Lighter background color */
+        }
+
+        /* Filter input at the top right */
+        .filter-input {
+            float: right;
+            margin-top: -30px; /* Adjust the margin to position it properly */
+            padding: 10px; /* Increased padding */
+            border: 2px solid #ccc; /* Increased border width */
+            border-radius: 5px;
+            font-size: 16px; /* Increased font size */
+        }
+
+        /* Styling for buttons */
+        .data-button {
+            background-color: #4ef14e;
+            color: white;
+            padding: 10px 15px; /* Increased padding for a larger button */
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            font-size: 18px; /* Increased font size */
+            margin-right: 20px; /* Added margin between buttons */
+            margin-top:30px;
+        }
+
+        .data-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styling for data records */
+        .record {
+            margin-top: 20px;
+            padding: 20px; /* Increased padding */
+            border: 2px solid #ccc; /* Increased border width */
+            border-radius: 10px; /* Increased border radius for a rounded appearance */
+            background-color: #f7f7f7;
+        }
+
+        /* Styling for headings */
+        h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        /* Styling for paragraphs */
+        p {
+            margin: 10px 0; /* Increased margin */
+            color: #666;
+        }
+
+        /* Styling for horizontal line */
+        hr {
+            margin: 30px 0; /* Increased margin */
+            border: 0;
+            border-top: 2px solid #ccc; /* Increased border width */
+        }
+
+        /* Styling for success message */
+        .success-message {
+            font-weight: bold;
+            color: green;
+        }
+
+        /* Styling for error message */
+        .error-message {
+            font-weight: bold;
+            color: red;
+        }
+
+        /* In your CSS stylesheet */
+       .fetch-heading {
+        text-align: center;
+        margin:  50px 50px 30px 30px ;
+        background-color: whitesmoke;
+        color: white;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 24px;
+        font-weight: bold;
+       }
+       .delete-input {
+            float: right;
+            margin-top: -30px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px; /* Adjust margin for spacing */
+        }
+
+        /* Styling for the new delete button */
+        .delete-button {
+            background-color: #f33434; /* Red background color for delete button */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+        .delete-button:hover {
+            background-color: #cc0000; /* Darker red on hover */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="data-container">
+        <h2>Data Retrieval</h2>
+        
+        <!-- Filter input at the top right -->
+        <input type="text" id="adminid" name="adminid" class="filter-input" placeholder="Patient ID" required>
+        
+        <!-- Button for fetching all data -->
+        <button id="fetch-all-data-button" class="data-button">Fetch All Data</button>
+        
+        <!-- Button for fetching data by ID -->
+        <button id="fetch-data-by-id-button" class="data-button">Fetch Data by ID</button>
+
+        <!-- New input field for delete -->
+        <!-- <input type="text" id="delete-id" name="delete-id" class="delete-input" placeholder="Patient ID to Delete" required> -->
+        <button id="appointment-button" class="data-button">View Appointment</button>
+        <!-- New button for the delete method -->
+        <button id="delete-data-button" class="delete-button">Delete Data by ID</button>
+
+        <button id="feedback-button" class="data-button">View Feedbacks</button>
+
+      
+
+        <!-- Container for displaying data -->
+        <div id="data-container">
+            <!-- Data will be displayed here -->
+        </div>
+    </div>
+    <!--=== Footer ===-->
+		<div class="footer-v1">
+            <div class="footer">
+            <div class="container">
+            <div class="row">
+            <!-- About -->
+            <div class="col-md-3 " style="margin-bottom: 40px;">
+            <a href="index.html"><img id="logo-footer" class="footer-logo" src="assets/img/logo/unity_white.jpg" alt=""></a>
+            <p>At Unity Hospital, we are convinced that 'quality' and 'lowest cost' are not mutually exclusive when it comes to healthcare delivery.</p>
+            <p>Our mission is to deliver high quality, affordable healthcare services to the broader population in India.</p>
+            </div><!--/col-md-3-->
+            <!-- End About -->
+    
+            <!-- Latest -->
+            <div class="col-md-3 " style="margin-bottom: 40px;">
+            <div class="posts">
+            <div class="headline"><h2>Latest Posts</h2></div>
+            <ul class="list-unstyled latest-list">
+            <li>
+            <a href="blog.html">Incredible content</a>
+            <small>December 16, 2020</small>
+            </li>
+            <li>
+            <a href="gallery.html">Latest Images</a>
+            <small>December 16, 2020</small>
+            </li>
+            <li>
+            <a href="terms.html">Terms and Conditions</a>
+            <small>December 16, 2020</small>
+            </li>
+            </ul>
+            </div>
+            </div><!--/col-md-3-->
+            <!-- End Latest -->
+    
+            <!-- Link List -->
+            <div class="col-md-3 " style="margin-bottom: 40px;">
+            <div class="headline"><h2>Useful Links</h2></div>
+            <ul class="list-unstyled link-list">
+            <li><a href="about.html">About us</a><i class="fa fa-angle-right"></i></li>
+            <li><a href="Contact.html">Contact us</a><i class="fa fa-angle-right"></i></li>
+            <li><a href="appointment.html">Book Appointment</a><i class="fa fa-angle-right"></i></li>
+            </ul>
+            </div><!--/col-md-3-->
+            <!-- End Link List -->
+    
+            <!-- Address -->
+            <div class="col-md-3 map-img " style="margin-bottom: 40px;">
+            <div class="headline"><h2>Contact Us</h2></div>
+            <address class="" style="margin-bottom: 40px;">
+            Unity Hospital <br />
+            Ahmedabad, IN <br />
+            Phone: 886 666 00555 <br />
+            Email: unityhospital@gmail.com 
+            </address>
+            </div><!--/col-md-3-->
+            <!-- End Address -->
+            </div>
+            </div>
+            </div><!--/footer-->
+    
+            <div class="copyright">
+            <div class="container">
+            <div class="row">
+            <div class="col-md-6">
+            <p>
+            2020 &copy; All Rights Reserved.
+            <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+            </p>
+            </div>
+    
+            <!-- Social Links -->
+            <div class="col-md-6">
+            <ul class="footer-socials list-inline">
+            <li>
+            <a href="http://www.facebook.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+            <i class="fa fa-facebook"></i>
+            </a>
+            </li>
+            <li>
+            <a href="http://www.skype.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+            <i class="fa fa-skype"></i>
+            </a>
+            </li>
+            <li>
+            <a href="http://www.googleplus.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+            <i class="fa fa-google-plus"></i>
+            </a>
+            </li>
+            <li>
+            <a href="http://www.linkedin.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
+            <i class="fa fa-linkedin"></i>
+            </a>
+            </li>
+            <li>
+            <a href="http://www.Pinterest.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
+            <i class="fa fa-pinterest"></i>
+            </a>
+            </li>
+            <li>
+            <a href="http://www.twitter.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+            <i class="fa fa-twitter"></i>
+            </a>
+            </li>
+            </ul>
+            </div>
+            <!-- End Social Links -->
+            </div>
+            </div>
+            </div><!--/copyright-->
+            </div>
+            <!--=== End Footer ===-->
+    </div><!--/wrapper-->
+    
+    <!-- Login Javascript -->
+    <script type="text/javascript" src="assets/plugins/jquery/validation.js"></script>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fetchAllDataButton = document.getElementById("fetch-all-data-button");
+            const fetchByIdButton = document.getElementById("fetch-data-by-id-button");
+            const dataContainer = document.getElementById("data-container");
+            const adminIdInput = document.getElementById("adminid");
+            const deleteDataButton = document.getElementById("delete-data-button");
+
+            fetchAllDataButton.addEventListener("click", async function () {
+                try {
+                    const response = await fetch("/getalldata"); // Replace with your server route
+                    if (response.ok) {
+                        const data = await response.json();
+                        displayData(data.message);
+                    } else {
+                        displayError("Error fetching all data.");
+                    }
+                } catch (error) {
+                    displayError("An error occurred: " + error.message);
+                }
+            });
+
+            fetchByIdButton.addEventListener("click", async function () {
+                const adminId = adminIdInput.value;
+
+                try {
+                    const response = await fetch(`/getbyid?id=${adminId}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data.message) {
+                            displayData([data.message]); // Wrap data.message in an array to reuse the displayData function
+                        } else {
+                            displayError("No data found for the given Admin ID.");
+                        }
+                    } else {
+                        displayError("Error fetching data by ID.");
+                    }
+                } catch (error) {
+                    displayError("An error occurred: " + error.message);
+                }
+            });
+
+            deleteDataButton.addEventListener("click", async function () {
+                const adminId = adminIdInput.value;
+
+                // Display a confirmation dialog
+                const confirmDelete = window.confirm("Are you sure you want to delete this data?");
+
+                if (confirmDelete) {
+                    try {
+                        const response = await fetch(`/deletebyid?id=${adminId}`, {
+                            method: "DELETE",
+                        });
+
+                        if (response.ok) {
+                            displayDeleteSuccessMessage();
+                        } else {
+                            displayError("Error deleting data by ID.");
+                        }
+                    } catch (error) {
+                        displayError("An error occurred: " + error.message);
+                    }
+                }
+            });
+
+            function displayData(data) {
+                dataContainer.innerHTML = "";
+                if (Array.isArray(data) && data.length > 0) {
+                    data.forEach(record => {
+                        const recordContainer = document.createElement("div");
+                        recordContainer.classList.add("record"); // Apply record styling
+
+                        const nameElement = document.createElement("h3");
+                        nameElement.textContent = `Name: ${record.fname} ${record.lname}`;
+
+                        const emailElement = document.createElement("p");
+                        emailElement.textContent = `Email: ${record.email}`;
+
+                        const passwordElement = document.createElement("p");
+                        passwordElement.textContent = `Password: ${record.password}`;
+
+                        const confirmElement = document.createElement("p");
+                        confirmElement.textContent = `Confirm Password: ${record.confirmpassword}`;
+
+                        const paid = document.createElement("h4");
+                        paid.textContent = `PatientID: ${record.patientid}`;
+
+                        recordContainer.appendChild(nameElement);
+                        recordContainer.appendChild(paid);
+                        recordContainer.appendChild(emailElement);
+                        recordContainer.appendChild(passwordElement);
+                        recordContainer.appendChild(confirmElement);
+
+                        dataContainer.appendChild(recordContainer);
+                    });
+                    // Set a success message
+                    const successMessage = document.createElement("p");
+                    successMessage.textContent = "Data fetched successfully.";
+                    successMessage.classList.add("success-message"); // Apply success message styling
+                    dataContainer.appendChild(successMessage);
+                } else {
+                    displayError("No data found.");
+                }
+            }
+
+            function displayDeleteSuccessMessage() {
+                dataContainer.innerHTML = "";
+                const successElement = document.createElement("p");
+                successElement.textContent = "Data deleted successfully.";
+                successElement.classList.add("success-message");
+                dataContainer.appendChild(successElement);
+            }
+
+            function displayError(errorMessage) {
+                dataContainer.innerHTML = "";
+                const errorElement = document.createElement("p");
+                errorElement.textContent = errorMessage;
+                errorElement.classList.add("error-message"); // Apply error message styling
+                dataContainer.appendChild(errorElement);
+            }
+        });
+    </script>
+
+<script>
+       document.addEventListener("DOMContentLoaded", function () {
+           
+           const dataContainer = document.getElementById("data-container");
+            const Appointment = document.getElementById("appointment-button");
+            const adminIdInput = document.getElementById("adminid");
+    // Add this code inside your existing script
+    // const viewAppointmentButton = document.getElementById("appointment-button");
+
+    Appointment.addEventListener("click", async function () {
+        const adminId = adminIdInput.value;
+
+        try {
+            const response = await fetch(`/viewappointment?id=${adminId}`);
+            if (response.ok) {
+                const data = await response.json();
+                if (data.message) {
+                    displayAppointmentData(data.message);
+                } else {
+                    displayError("No appointment data found for the given Admin ID.");
+                }
+            } else {
+                displayError("Error fetching appointment data by ID.");
+            }
+        } catch (error) {
+            displayError("An error occurred: " + error.message);
+        }
+    });
+
+    function displayAppointmentData(appointmentData) {
+        dataContainer.innerHTML = "";
+        const appointmentContainer = document.createElement("div");
+        appointmentContainer.classList.add("record"); // Apply record styling
+
+        const nameElement = document.createElement("h3");
+        nameElement.textContent = `Name: ${appointmentData.name}`;
+
+        const patientIdElement = document.createElement("p");
+        patientIdElement.textContent = `Patient ID: ${appointmentData.Patientnid}`;
+
+        const phoneNumberElement = document.createElement("p");
+        phoneNumberElement.textContent = `Phone Number: ${appointmentData.phonenumber}`;
+
+        const purposeElement = document.createElement("p");
+        purposeElement.textContent = `Purpose: ${appointmentData.purpose}`;
+
+        const departmentElement = document.createElement("p");
+        departmentElement.textContent = `Department: ${appointmentData.dep}`;
+
+        const emailElement = document.createElement("p");
+        emailElement.textContent = `Email: ${appointmentData.email}`;
+
+        const dateElement = document.createElement("p");
+        dateElement.textContent = `Date: ${appointmentData.date}`;
+
+        const timeElement = document.createElement("p");
+        timeElement.textContent = `Time: ${appointmentData.time}`;
+
+        appointmentContainer.appendChild(nameElement);
+        appointmentContainer.appendChild(patientIdElement);
+        appointmentContainer.appendChild(phoneNumberElement);
+        appointmentContainer.appendChild(purposeElement);
+        appointmentContainer.appendChild(departmentElement);
+        appointmentContainer.appendChild(emailElement);
+        appointmentContainer.appendChild(dateElement);
+        appointmentContainer.appendChild(timeElement);
+
+        dataContainer.appendChild(appointmentContainer);
+
+        // Set a success message
+        const successMessage = document.createElement("p");
+        successMessage.textContent = "Appointment data fetched successfully.";
+        successMessage.classList.add("success-message"); // Apply success message styling
+        dataContainer.appendChild(successMessage);
+    }
+});
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dataContainer = document.getElementById("data-container");
+        const feedbackButton = document.getElementById("feedback-button");
+
+        feedbackButton.addEventListener("click", async function () {
+            try {
+                const response = await fetch("/viewallfeedback"); // Replace with your server route
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.message) {
+                        displayFeedbackData(data.message);
+                    } else {
+                        displayError("No feedback data found.");
+                    }
+                } else {
+                    displayError("Error fetching feedback data.");
+                }
+            } catch (error) {
+                displayError("An error occurred: " + error.message);
+            }
+        });
+
+        function displayFeedbackData(feedbackData) {
+            dataContainer.innerHTML = "";
+            feedbackData.forEach(feedback => {
+                const feedbackContainer = document.createElement("div");
+                feedbackContainer.classList.add("record"); // Apply record styling
+
+                const nameElement = document.createElement("h3");
+                nameElement.textContent = `Name: ${feedback.name}`;
+
+                const emailElement = document.createElement("p");
+                emailElement.textContent = `Email: ${feedback.email}`;
+
+                const subjectElement = document.createElement("p");
+                subjectElement.textContent = `Subject: ${feedback.subject}`;
+
+                const phoneElement = document.createElement("p");
+                phoneElement.textContent = `Phone: ${feedback.phone}`;
+
+                const messageElement = document.createElement("p");
+                messageElement.textContent = `Message: ${feedback.message}`;
+
+                feedbackContainer.appendChild(nameElement);
+                feedbackContainer.appendChild(emailElement);
+                feedbackContainer.appendChild(subjectElement);
+                feedbackContainer.appendChild(phoneElement);
+                feedbackContainer.appendChild(messageElement);
+
+                dataContainer.appendChild(feedbackContainer);
+            });
+
+            // Set a success message
+            const successMessage = document.createElement("p");
+            successMessage.textContent = "Feedback data fetched successfully.";
+            successMessage.classList.add("success-message"); // Apply success message styling
+            dataContainer.appendChild(successMessage);
+        }
+
+        function displayError(errorMessage) {
+            dataContainer.innerHTML = "";
+            const errorElement = document.createElement("p");
+            errorElement.textContent = errorMessage;
+            errorElement.classList.add("error-message"); // Apply error message styling
+            dataContainer.appendChild(errorElement);
+        }
+    });
+</script>
+
+
+</body>
+</html>

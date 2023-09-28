@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Admin</title>
+</head>
+<body>
+    <h2>Create Admin</h2>
+    <form id="admin-form">
+        <div class="input-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="input-group">
+            <label for="adminID">Admin ID:</label>
+            <input type="text" id="adminID" name="adminID" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Create Admin</button>
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const adminForm = document.getElementById("admin-form");
+
+            adminForm.addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const adminID = document.getElementById("adminID").value;
+                const password = document.getElementById("password").value;
+
+                const adminData = {
+                    name: name,
+                    adminID: adminID,
+                    password: password
+                };
+
+                try {
+                    const response = await fetch("/createadmin", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(adminData)
+                    });
+
+                    if (response.ok) {
+                        // Admin created successfully
+                        alert("Admin created successfully!");
+                    } else {
+                        // Handle errors
+                        alert("Error creating admin.");
+                    }
+                } catch (error) {
+                    // Handle network errors
+                    alert("An error occurred: " + error.message);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
