@@ -623,7 +623,7 @@
 }
 
 .header-v1 .mega-menu .mega-menu-content {
-  	*zoom: 1;
+  	zoom: 1;
   	padding: 0;
 }
 
