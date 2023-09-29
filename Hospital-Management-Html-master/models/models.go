@@ -19,6 +19,7 @@ type Appoitment struct {
 	Email       string `json:"email,omitempty"`
 	Date        string `json:"date,omitempty"`
 	Time        string `json:"time,omitempty"`
+	PatientID   string `json:"patientid,omitempty"`
 }
 
 type Login struct {

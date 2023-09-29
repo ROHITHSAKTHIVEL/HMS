@@ -98,11 +98,21 @@ func Insert(profile models.Customer) error {
 // }
 
 func Appoitment(profile models.Appoitment) {
-	inserted, err := config.Customer_Collection.InsertOne(context.Background(), profile)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println("Inserted", inserted.InsertedID)
+    var ctx context.Context
+    query := bson.M{"email": profile.Email}
+    var patient models.Customer
+    err := config.Customer_ProfileCollection.FindOne(ctx, query).Decode(&patient)
+
+    if err != nil {
+        fmt.Println(err)
+    } else {
+        profile.PatientID = patient.PatientID
+        inserted, err := config.Customer_Collection.InsertOne(context.Background(), profile)
+        if err != nil {
+            log.Fatal(err)
+        }
+        fmt.Println("Inserted", inserted.InsertedID)
+    }
 }
 func Login(profile models.Login) error {
 	fmt.Println("service")
@@ -204,7 +214,7 @@ func DeleteById(adminId string) error {
 func ViewAppointment(patientID string) (models.Appoitment, error) {
 	//fmt.Println("service")
 	// Define a filter to query appointments by patient ID.
-	filter := bson.M{"name": patientID}
+	filter := bson.M{"patient": patientID}
 
 	var appointments models.Appoitment
 	err := config.Customer_Collection.FindOne(context.Background(), filter).Decode(&appointments)
