@@ -544,94 +544,69 @@
                     }
                 }
             });
-
             function displayData(data) {
-                dataContainer.innerHTML = "";
-                if (Array.isArray(data) && data.length > 0) {
-                    data.forEach(record => {
-                        const recordContainer = document.createElement("div");
-                        recordContainer.classList.add("record"); // Apply record styling
+    dataContainer.innerHTML = "";
+    if (Array.isArray(data) && data.length > 0) {
+        data.forEach(customer => {
+            const recordContainer = document.createElement("div");
+            recordContainer.classList.add("record"); // Apply record styling
 
-                        const nameElement = document.createElement("h3");
-                        nameElement.textContent = `Name: ${record.fname} ${record.lname}`;
+            const nameElement = document.createElement("h3");
+            nameElement.textContent = `Name: ${customer.fname} ${customer.lname}`;
 
-                        const emailElement = document.createElement("p");
-                        emailElement.textContent = `Email: ${record.email}`;
+            const emailElement = document.createElement("p");
+            emailElement.textContent = `Email: ${customer.email}`;
 
-                        const passwordElement = document.createElement("p");
-                        passwordElement.textContent = `Password: ${record.password}`;
+            const passwordElement = document.createElement("p");
+            passwordElement.textContent = `Password: ${customer.password}`;
 
-                        const confirmElement = document.createElement("p");
-                        confirmElement.textContent = `Confirm Password: ${record.confirmpassword}`;
+            const confirmElement = document.createElement("p");
+            confirmElement.textContent = `Confirm Password: ${customer.confirmpassword}`;
 
-                        const paid = document.createElement("h4");
-                        paid.textContent = `PatientID: ${record.patientid}`;
+            const patientIdElement = document.createElement("p");
+            patientIdElement.textContent = `Patient ID: ${customer.patientid}`;
 
-                        recordContainer.appendChild(nameElement);
-                        recordContainer.appendChild(paid);
-                        recordContainer.appendChild(emailElement);
-                        recordContainer.appendChild(passwordElement);
-                        recordContainer.appendChild(confirmElement);
+            const patientHealthContainer = document.createElement("div");
+            patientHealthContainer.innerHTML = "<h4>Patient Health Records:</h4>";
 
-                        dataContainer.appendChild(recordContainer);
-                    });
-                    // Set a success message
-                    const successMessage = document.createElement("p");
-                    successMessage.textContent = "Data fetched successfully.";
-                    successMessage.classList.add("success-message"); // Apply success message styling
-                    dataContainer.appendChild(successMessage);
-                } else {
-                    displayError("No data found.");
-                }
-            }
-
-            function displayDeleteSuccessMessage() {
-                dataContainer.innerHTML = "";
-                const successElement = document.createElement("p");
-                successElement.textContent = "Data deleted successfully.";
-                successElement.classList.add("success-message");
-                dataContainer.appendChild(successElement);
-            }
-
-            function displayError(errorMessage) {
-                dataContainer.innerHTML = "";
-                const errorElement = document.createElement("p");
-                errorElement.textContent = errorMessage;
-                errorElement.classList.add("error-message"); // Apply error message styling
-                dataContainer.appendChild(errorElement);
-            }
-        });
-    </script>
-
-<script>
-       document.addEventListener("DOMContentLoaded", function () {
-           
-           const dataContainer = document.getElementById("data-container");
-            const Appointment = document.getElementById("appointment-button");
-            const adminIdInput = document.getElementById("adminid");
-    // Add this code inside your existing script
-    // const viewAppointmentButton = document.getElementById("appointment-button");
-
-    Appointment.addEventListener("click", async function () {
-        const adminId = adminIdInput.value;
-
-        try {
-            const response = await fetch(`/viewappointment?id=${adminId}`);
-            if (response.ok) {
-                const data = await response.json();
-                if (data.message) {
-                    displayAppointmentData(data.message);
-                } else {
-                    displayError("No appointment data found for the given Admin ID.");
-                }
+            // Display patient health records
+            if (Array.isArray(customer.patienthealth) && customer.patienthealth.length > 0) {
+                customer.patienthealth.forEach(healthRecord => {
+                    const healthRecordElement = document.createElement("p");
+                    healthRecordElement.textContent = `
+                        Sugar: ${healthRecord.sugar}, 
+                        Weight: ${healthRecord.weight}, 
+                        Pressure: ${healthRecord.pressure}, 
+                        Temperature: ${healthRecord.temperature}, 
+                        Doctor's Review: ${healthRecord.drreview}
+                    `;
+                    patientHealthContainer.appendChild(healthRecordElement);
+                });
             } else {
-                displayError("Error fetching appointment data by ID.");
+                const noHealthRecordElement = document.createElement("p");
+                noHealthRecordElement.textContent = "No patient health records available.";
+                patientHealthContainer.appendChild(noHealthRecordElement);
             }
-        } catch (error) {
-            displayError("An error occurred: " + error.message);
-        }
-    });
 
+            recordContainer.appendChild(nameElement);
+            recordContainer.appendChild(emailElement);
+            recordContainer.appendChild(passwordElement);
+            recordContainer.appendChild(confirmElement);
+            recordContainer.appendChild(patientIdElement);
+            recordContainer.appendChild(patientHealthContainer);
+
+            dataContainer.appendChild(recordContainer);
+        });
+
+        // Set a success message
+        const successMessage = document.createElement("p");
+        successMessage.textContent = "Data fetched successfully.";
+        successMessage.classList.add("success-message"); // Apply success message styling
+        dataContainer.appendChild(successMessage);
+    } else {
+        displayError("No data found.");
+    }
+}
     function displayAppointmentData(appointmentData) {
         dataContainer.innerHTML = "";
         const appointmentContainer = document.createElement("div");
